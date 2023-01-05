@@ -1,0 +1,9 @@
+[Unit]
+Description=Xenium Programmer
+
+[Service]
+WorkingDirectory=/home/pi/xp
+ExecStart=/home/pi/xp/xeniumListenerCHIP
+
+[Install]
+WantedBy=multi-user.target
