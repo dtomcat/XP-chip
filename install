@@ -56,9 +56,11 @@ if (which g++ || grep -q "g++" ); then
     cd ..
 
     # ensure script is executable
-    chmod +x xenium-programmer
-    chmod +x xenium-programmer-pi
-    chmod +x xenium-programmer-smd
+    chmod 755 BitBangOnly
+    chmod 755 FlashOnly
+    chmod 755 xenium-programmer-smd
+    chmod 755 OX-Only_SMD
+    chmod 755 xeniumListenerCHIP
 
     echo -e '\n** INSTALL COMPLETE **\n'
 
