@@ -51,7 +51,7 @@ def clearError():
 def held1():
     global was_held
     was_held = True
-    print("button was held not just pressed")
+    onlyBitBang()
 
 def released1():
     global was_held
@@ -78,40 +78,48 @@ def held3():
 def released3():
     global was_held
     if not was_held:
-        pressed()
+        onlyFlash_Program()
     was_held = False
 
 def held4():
     global was_held
     was_held = True
-    print("button was held not just pressed")
+    shutdownButton()
 
 def released4():
     global was_held
     if not was_held:
-        pressed()
+        clearError()
     was_held = False
     
 def complete_Program():
     ledsOff
     print("Programming both chips")
-    os.popen('/home/pi/xp/xenium-programmer-smd').read()
+    os.popen('/home/pi/XP-chip/xenium-programmer-smd').read()
     Gled.on()
     print("Ready to go again!")
 
 def onlyOpenXenium_Program():
     ledsOff
     print("Programming openXenium.jed to Xenium")
-    os.popen('/home/pi/xp/OX-Only_SMD').read()
+    os.popen('/home/pi/XP-chip/OX-Only_SMD').read()
     Gled.on()
     print("Ready to go again!")
   
 def onlyFlash_Program():
     ledsOff
     print("Programming XOS to Flash")
-    os.popen('/home/pi/xp/FlashOnly').read()
+    os.popen('/home/pi/XP-chip/FlashOnly').read()
     Gled.on()
     print("Ready to go again!")
+
+def onlyBitBang():
+    ledsOff
+    print("Programming BitBang Firmware to CPLD")
+    os.popen('/home/pi/XP-chip/BitBangOnly').read()
+    Gled.on()
+    print("Ready to go again!")
+
 
 button1 = Button(13)
 button2 = Button(5)
@@ -123,15 +131,8 @@ button1.when_held = held1
 button2.when_released = released2
 #button2.when_held = held2
 button3.when_released = released3
-button3.when_held = held3
+#button3.when_held = held3
 button4.when_released = released4
 button4.when_held = held4
-
-
-button1.when_released = complete_Program
-button2.when_released = onlyOpenXenium_Program
-button3.when_released = onlyFlash_Program
-button4.when_released = clearError
-button4.when_held = shutdownButton
 
 pause()
