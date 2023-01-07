@@ -20,9 +20,19 @@ https://www.pishop.us/product/raspberry-pi-zero-w/
 -------------
 ## INSTALLING THE XENIUM PROGRAMMER
 
-- Connect to the PI via SSH or Serial terminal 
+- After the OS has been written to your SD card, insert SD card into PC.
+    - Add the following to the last line in "config.txt":   `enable_uart=1`
+- Save edit and eject SD Card.  Insert SD card into Pi and boot up.
+- Connect to the PI via SSH or Serial terminal
 - Clone this repo by running: `git clone https://github.com/dtomcat/XP-chip.git`
+- Change to program directory: `cd XP-chip`
+- Fix permission on install file:  `chmod 755 install`
 - Then run: `./install`
+- Setup service to listen for button presses:
+    - `sudo cp xeniumCHIP.service /etc/systemd/system/xeniumCHIP.service`
+    - `sudo systemctl daemon-reload`
+    - `sudo systemctl enable xeniumCHIP`
+    - `sudo service xeniumCHIP start`
 
 ## UPDATING XENIUM PROGRAMMER
 
