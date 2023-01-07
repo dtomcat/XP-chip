@@ -64,7 +64,7 @@ if (which g++ || grep -q "g++" ); then
 
     echo -e '\n** INSTALL COMPLETE **\n'
 
-    echo -e '\nProgram your Xenium by running:\n\t ./xenium-programmer\n'
+    echo -e '\nProgram your Xenium by running:\n\t ./xenium-programmer-smd\n'
 else
     echo -e '\n*** ERROR: No C++ Compiler found!!!!\n'
 fi
