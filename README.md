@@ -22,6 +22,7 @@ https://www.pishop.us/product/raspberry-pi-zero-w/
 
 - After the OS has been written to your SD card, insert SD card into PC.
     - Add the following to the last line in "config.txt":   `enable_uart=1`
+        - This is required to allow the PWR LED to function properly.
 - Save edit and eject SD Card.  Insert SD card into Pi and boot up.
 - Connect to the PI via SSH or Serial terminal
 - Clone this repo by running: `git clone https://github.com/dtomcat/XP-chip.git`
