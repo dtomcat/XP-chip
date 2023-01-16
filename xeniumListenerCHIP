@@ -67,7 +67,7 @@ def held2():
 def released2():
     global was_held
     if not was_held:
-        onlyOpenXenium_Program()
+        onlyFlash_Program()
     was_held = False
 
 def held3():
@@ -78,7 +78,7 @@ def held3():
 def released3():
     global was_held
     if not was_held:
-        onlyFlash_Program()
+        onlyOpenXenium_Program()
     was_held = False
 
 def held4():
