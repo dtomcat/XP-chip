@@ -25,6 +25,8 @@ https://www.pishop.us/product/raspberry-pi-zero-w/
         - This is required to allow the PWR LED to function properly.
 - Save edit and eject SD Card.  Insert SD card into Pi and boot up.
 - Connect to the PI via SSH or Serial terminal
+- If git is not installed, you need to install it:
+    - `sudo apt-get install git`
 - Clone this repo by running: `git clone https://github.com/dtomcat/XP-chip.git`
 - Change to program directory: `cd XP-chip`
 - Fix permission on install file:  `chmod 755 install`
