@@ -2,7 +2,7 @@
 Description=Xenium Programmer
 
 [Service]
-WorkingDirectory=/home/pi/XP-chip
+WorkingDirectory=/home/pi/XP-Chip
 ExecStart=/home/pi/XP-chip/xeniumListenerCHIP
 
 [Install]
